@@ -18,10 +18,10 @@ class Mover {
   RVector acceleration;
   
   // Constructor – use this to initialize a Mover instance
-  Mover() {
+  Mover(RVector location_) {
     
     // Movers appear in centre of window and have zero velocity at first
-    location = new RVector(random(0, width), random(0, height));
+    location = location_;
     velocity = new RVector(0, 0);  // object at rest when instantiated
   }
   
@@ -38,6 +38,7 @@ class Mover {
     // Normalize and scale the direction vector
     direction.normalize();
     direction.mult(0.10);
+    direction.mult(0);
     
     // Accelerate based on direction vector
     acceleration = direction;
