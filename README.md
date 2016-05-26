@@ -2,20 +2,22 @@
 
 ## Overall goal
 
-My summative task will be a combination software and hardware product.
+I will program a simulation of flocking behaviour as demonstrated by birds, or schools of fish.
 
-I will program a sensor attached to an Arduino board. The sensor will be able to detect how hard a person is blowing air toward it (perhaps a pressure sensor? a mic?).
+In the sketch, a visual representation of a flock of "birds" will be shown.
 
-When a person blows on the sensor, this information is transmitted to a Processing sketch.
+The lead "bird" will follow the mouse.
 
-In the sketch, a visual representation of a "ripe" dandelion will be shown.  The dandelion seeds will disperse on screen in the sketch, simulating the physics of the motion of real dandelion seeds, when someone blows them off the stem in real life.
+The other birds will follow these rules:
+
+1. Seperation rule: Avoid crowding your neighbours. Give the other "birds" room to avoid collisions.
+2. Alignment rule: "Look" at where the other birds are going and pick a heading that is the average of everyone else's trajectories.
+3. Cohesion rule: Move toward the average position of all your neighbours, to prevent the flock from dissipating.
 
 ## Sub-goals
 
-* extend Motion class (that we developed earlier together) to allow for force accumulation (wind, gravity, other forces)
-* make the mouse movement translate to a wind force
-* make it so that moving the mouse causes the "seeds" of the dandelion to disperse
-* modify the visual representation of the Motion class to more closely resembly dandelion seeds
-* identify an Arduino sensor that might work to detect air pressure / volume
-* program sensor to send values to Processing sketch
-* translate sensor output to wind force in sketch
+* start the "birds" in a V-shape
+* make only the "lead bird" follow the mouse
+* implement seperation rule
+* implement alignment rule
+* implement cohesion rule
