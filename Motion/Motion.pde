@@ -1,5 +1,5 @@
 // Create a space in memory for a Mover object
-Mover movers[] = new Mover[25];
+Bird birds[] = new Bird[25];
 
 // Runs once
 void setup() {
@@ -8,18 +8,17 @@ void setup() {
   size(1000, 700);
   background(255);
 
-  // Actually make an instance of a Mover
-  println(movers.length / 2);
-  for (int i = 0; i < movers.length; i++) {
+  // Make the flock of birds
+  for (int i = 0; i < birds.length; i++) {
     float x = 0;
-    if (i < movers.length / 2) { 
+    if (i < birds.length / 2) { 
       x = width / 20 * i;
     } else {
-      x = (width / 20) * (movers.length / 2) - (width / 20) * (i - (movers.length / 2));
+      x = (width / 20) * (birds.length / 2) - (width / 20) * (i - (birds.length / 2));
     }
     float y = height / 25 * i;
     RVector initialPosition = new RVector(x, y);
-    movers[i] = new Mover(initialPosition);
+    birds[i] = new Bird(initialPosition);
   }
 }
 
@@ -30,10 +29,10 @@ void draw() {
   background(255);
 
   // Make the movers move!
-  for (int i = 0; i < movers.length; i++) {
-    movers[i].update();
-    movers[i].checkEdges();
-    movers[i].display();
+  for (int i = 0; i < birds.length; i++) {
+    birds[i].update();
+    birds[i].checkEdges();
+    birds[i].display();
   }
 }
 
