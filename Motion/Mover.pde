@@ -38,7 +38,6 @@ class Mover {
     // Normalize and scale the direction vector
     direction.normalize();
     direction.mult(0.10);
-    direction.mult(0);
     
     // Accelerate based on direction vector
     acceleration = direction;
