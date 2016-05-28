@@ -2,6 +2,7 @@ class Flock {
 
   // Create a space in memory for a "flock" of birds
   Bird birds[] = new Bird[25];
+  int leadBird = -1;
 
   Flock() {
     
@@ -60,7 +61,6 @@ class Flock {
 
     // Reset tracking variables for finding shortest distance to mouse
     Float shortestDistanceToMouse = Float.POSITIVE_INFINITY;
-    int leadBird = -1;
 
     // Find each bird's position relative to the mouse
     for (int i = 0; i < birds.length; i++) {
