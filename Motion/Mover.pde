@@ -24,6 +24,8 @@ class Mover {
     // Movers appear in centre of window and have zero velocity at first
     location = location_;
     velocity = new RVector(0, 0);  // object at rest when instantiated
+    acceleration = new RVector(0, 0);  // object at rest when instantiated 
+    heading = new RVector(0, 0);  // object at rest when instantiated 
   }
 
   // Behaviour
@@ -38,13 +40,13 @@ class Mover {
   }
 
   // get direction vector
-  void getDirection() {
-    // Determine the direction vector that points to the mouse from our current location
-    RVector mouse = new RVector(mouseX, mouseY);
-    RVector direction = RVector.sub(mouse, location);
+  void getDirectionTowardPosition(float x, float y) {
+    // Determine the direction vector that points to the specified position
+    RVector position = new RVector(x, y);
+    RVector direction = RVector.sub(position, location);
 
-    // Save the raw heading vector that points to the mouse
-    heading = RVector.sub(mouse, location);
+    // Save the raw heading vector that points to the specified position
+    heading = RVector.sub(position, location);
 
     // Normalize and scale the direction vector
     direction.normalize();

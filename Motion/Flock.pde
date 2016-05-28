@@ -13,6 +13,9 @@ class Flock {
 
   // Reset the flock of birds to their initial positions
   void reset() {
+    
+    // Set the lead bird
+    leadBird = birds.length / 2;
 
     // Make the flock of birds
     for (int i = 0; i < birds.length; i++) {
@@ -34,7 +37,10 @@ class Flock {
       // Always fan down
       float y = height / 25 * i;
       RVector initialPosition = new RVector(x, y);
-      birds[i] = new Bird(initialPosition);
+      if (i == leadBird) 
+        birds[i] = new Bird(initialPosition, true);
+      else 
+        birds[i] = new Bird(initialPosition, false);
     }
     
   }
@@ -44,7 +50,7 @@ class Flock {
 
     // Update birds' positions
     for (int i = 0; i < birds.length; i++)
-      birds[i].update();
+      birds[i].update(birds[leadBird]);
 
     // Determine the lead bird
     findLeadBird();
