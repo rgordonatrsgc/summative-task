@@ -11,6 +11,18 @@ class Bird extends Mover {
     
   }
   
+  // update position
+  void update() {
+    
+    // Only lead bird follows the mouse
+    if (leadBird) {
+      super.getDirection();
+      super.update();
+    } else {
+      super.getDirection();
+    }
+  }
+  
   // do not wrap around edges, just go off screen
   void checkEdges() {
         
