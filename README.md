@@ -10,7 +10,7 @@ The lead "bird" will follow the mouse.
 
 The other birds will follow these rules:
 
-1. Seperation rule: Avoid crowding your neighbours. Give the other "birds" room to avoid collisions.
+1. Separation rule: Avoid crowding your neighbours. Give the other "birds" room to avoid collisions.
 2. Alignment rule: "Look" at where the other birds are going and pick a heading that is the average of everyone else's trajectories.
 3. Cohesion rule: Move toward the average position of all your neighbours, to prevent the flock from dissipating.
 
@@ -18,6 +18,6 @@ The other birds will follow these rules:
 
 * start the "birds" in a V-shape
 * make only the "lead bird" follow the mouse
-* implement seperation rule
+* implement separation rule
 * implement alignment rule
 * implement cohesion rule
