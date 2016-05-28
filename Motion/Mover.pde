@@ -16,6 +16,7 @@ class Mover {
   RVector location;
   RVector velocity;
   RVector acceleration;
+  RVector heading;
   
   // Constructor – use this to initialize a Mover instance
   Mover(RVector location_) {
@@ -34,6 +35,9 @@ class Mover {
     // Determine the direction vector that points to the mouse from our current location
     RVector mouse = new RVector(mouseX, mouseY);
     RVector direction = RVector.sub(mouse, location);
+    
+    // Save the raw heading vector that points to the mouse
+    heading = RVector.sub(mouse, location);
     
     // Normalize and scale the direction vector
     direction.normalize();
